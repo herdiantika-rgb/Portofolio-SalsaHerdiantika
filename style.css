@@ -1,0 +1,770 @@
+
+/* ==================================
+   1. GLOBAL / PENGATURAN DASAR
+================================== */
+
+:root {
+    --pink: #e99ab4;
+    --pink-dark: #d77d9e;
+    --pink-light: #fceaf0;
+    --pink-soft: #fff6f8;
+    --white: #ffffff;
+    --text: #51434a;
+    --muted: #907f86;
+    --border: #f3dce5;
+    --shadow: 0 10px 35px rgba(205, 135, 160, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==================================
+   2. NAVBAR
+================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.logo span,
+.footer h3 span {
+    color: var(--pink-dark);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 27px;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--pink-dark);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   3. HOME / HERO
+================================== */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 15%, #fceaf0, transparent 30%),
+        linear-gradient(120deg, #fff7fa, #ffffff);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.small-label {
+    display: inline-block;
+    color: var(--pink-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--pink-dark);
+}
+
+.hero h2 {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.hero-content > p {
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--pink-dark);
+    color: white;
+    box-shadow: 0 5px 15px rgba(215, 125, 158, 0.25);
+}
+
+.btn-primary:hover {
+    background: #c76589;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--pink);
+    color: var(--pink-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--pink-light);
+    transform: translateY(-3px);
+}
+
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.social-line {
+    height: 1px;
+    width: 45px;
+    background: var(--pink);
+}
+
+
+/* ==================================
+   4. PROFILE CARD
+================================== */
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.profile-card {
+    width: 280px;
+    height: 340px;
+    border-radius: 150px 150px 25px 25px;
+    background: linear-gradient(145deg, #f9dce6, #f4b9cc);
+    border: 10px solid white;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: #fff7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    font-weight: bold;
+    border: 7px solid white;
+    box-shadow: var(--shadow);
+}
+
+.profile-caption {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.profile-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.profile-caption p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.decor {
+    position: absolute;
+    color: var(--pink-dark);
+    font-size: 40px;
+}
+
+.decor-one {
+    top: 15px;
+    right: 30px;
+}
+
+.decor-two {
+    bottom: 30px;
+    left: 25px;
+}
+
+.floating-note {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 12px 18px;
+    font-size: 11px;
+    box-shadow: var(--shadow);
+}
+
+.floating-note span {
+    color: var(--pink-dark);
+}
+
+
+/* ==================================
+   5. SECTION HEADING
+================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading .small-label {
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 span {
+    color: var(--pink-dark);
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ==================================
+   6. EDUCATION
+================================== */
+
+.education-section {
+    background: var(--pink-soft);
+}
+
+.education-card {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-icon {
+    min-width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--pink-light);
+    border-radius: 18px;
+    color: var(--pink-dark);
+    font-size: 30px;
+}
+
+.education-year {
+    color: var(--pink-dark);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.education-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.education-info p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.class-label {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    border-radius: 20px;
+    padding: 5px 13px;
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.education-note,
+.skills-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+/* ==================================
+   7. SKILLS
+================================== */
+
+.skills-section {
+    background: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--pink-soft);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.skill-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 16px;
+    margin: 0 auto 18px;
+    color: var(--pink-dark);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.skill-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* ==================================
+   8. EXPERIENCE
+================================== */
+
+.experience-section {
+    background: var(--pink-soft);
+}
+
+/* Dua kartu berada di tengah */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: stretch;
+}
+
+.experience-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.experience-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.experience-number {
+    color: var(--pink-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+}
+
+.experience-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 15px 0 10px;
+}
+
+.experience-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ==================================
+   9. CONTACT
+================================== */
+
+.contact-section {
+    background: white;
+}
+
+.contact-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 55px 35px;
+    text-align: center;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #fff0f5, #fce0ea);
+    border: 1px solid var(--border);
+}
+
+.contact-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.contact-card h2 span {
+    color: var(--pink-dark);
+}
+
+.contact-card > p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 520px;
+    margin: 0 auto 25px;
+}
+
+.contact-details {
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.contact-details p {
+    margin: 7px 0;
+}
+
+
+/* ==================================
+   10. FOOTER
+================================== */
+
+.footer {
+    background: #fceaf0;
+    text-align: center;
+    padding: 35px 0;
+}
+
+.footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.copyright {
+    margin-top: 12px;
+}
+
+
+/* ==================================
+   11. RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero-container {
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-grid {
+        max-width: 800px;
+        gap: 20px;
+    }
+
+    .experience-card {
+        padding: 25px;
+    }
+}
+
+
+/* ==================================
+   12. RESPONSIVE MOBILE
+================================== */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        padding: 10px 20px 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-social {
+        justify-content: center;
+        margin-top: 35px;
+    }
+
+    .hero-visual {
+        min-height: 370px;
+    }
+
+    .profile-card {
+        width: 240px;
+        height: 300px;
+    }
+
+    .profile-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* Experience satu kolom dan tetap di tengah */
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .experience-card {
+        padding: 25px;
+    }
+
+    .education-card {
+        padding: 22px;
+    }
+
+    .contact-card {
+        padding: 40px 20px;
+    }
+
+    .contact-card h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* ==================================
+   13. RESPONSIVE HP KECIL
+================================== */
+
+@media (max-width: 380px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .experience-card {
+        padding: 22px;
+    }
+}
+
+
+/* ==================================
+   14. FOTO PROFILE
+================================== */
+
+.profile-photo {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid white;
+    box-shadow: var(--shadow);
+}
